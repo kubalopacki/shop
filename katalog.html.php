@@ -49,9 +49,11 @@
                     <img class="image" height="300px" src="<?php echo $product['image'] ?>" alt=""/>
                     <div class="caption">
                         <h3><?php echo $product['name_'] ?></h3>
-                        <p>Cena:<?php echo $product['price'] ?></p>
+                        <p>Cena:<?php echo $product['price'] . " PLN" ?></p>
                         <p>
-                            <a href="/product_page.php?id=<?php echo $product['product_id']?>" class="btn btn-primary" role="button">Więcej</a>
+                            <a href="/product?id=<?php echo $product['product_id'] ?>"
+                               class="btn btn-primary"
+                               role="button">Więcej</a>
                             <a href="#" class="btn btn-default" role="button">Dodaj do koszyka</a>
                         </p>
                     </div>
