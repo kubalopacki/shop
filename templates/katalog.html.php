@@ -11,7 +11,7 @@
     <title>Sklep</title>
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-    <link href="shop_style.css" rel="stylesheet">
+    <link href="../assets/shop_style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,17 +30,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
+                <a href="/cart" class="btn btn-default" role="button">Koszyk</a>
+                <a href="/cart">Ilość produktów w koszyku(<?php echo array_sum($_SESSION['cart']) ?>)</a>
             </form>
         </div>
     </div>
 </nav>
+
 <div class="container">
     <div class="row">
         <?php foreach ($products as $product): ?>
@@ -54,7 +50,9 @@
                             <a href="/product?id=<?php echo $product['product_id'] ?>"
                                class="btn btn-primary"
                                role="button">Więcej</a>
-                            <a href="#" class="btn btn-default" role="button">Dodaj do koszyka</a>
+                            <a href="/dodajdokoszyka?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
+                               role="button">Dodaj
+                                do koszyka</a>
                         </p>
                     </div>
                 </div>
@@ -65,6 +63,7 @@
 
     <footer>
         <p>&copy; 2016 Company, Inc.</p>
+        <?php print_r($_SESSION['cart']) ?>
     </footer>
 </div>
 

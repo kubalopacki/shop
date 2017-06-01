@@ -5,6 +5,7 @@ $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
-require __DIR__ . '/katalog.html.php';
+require TEMPLATES_PATH . '/katalog.html.php';
+
 
 
