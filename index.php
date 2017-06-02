@@ -13,8 +13,8 @@ if ($uri === '/product') {
     require_once __DIR__ . '/controller/dodajDoKoszyka.php';
 } elseif ($uri === '/cart') {
     require_once __DIR__ . '/controller/cart.php';
-} elseif ($uri === '/dodajdokoszyka2.php') {
-    require_once __DIR__ . '/controller/dodajdokoszyka2.php';
+} elseif ($uri === '/sessionclear') {
+    require_once __DIR__ . '/lib/sessionclear.php';
 } else {
     require_once __DIR__ . '/controller/katalog.php';
 }

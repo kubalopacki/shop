@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title><?php echo $product["full_name"] ?></title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="../assets/product_page_style.css" rel="stylesheet">
-    <link href="../assets/product_page_style_2.css" rel="stylesheet">
-</head>
-<body>
-
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Sklep</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <a href="/cart" class="btn btn-default" role="button">Koszyk</a>
-                <a href="/cart">Ilość produktów w koszyku(<?php echo array_sum($_SESSION['cart']) ?>)</a>
-            </form>
-        </div>
-    </div>
-</nav>
+<?php $title = $product["full_name"] ?>
+<?php include 'top_menu.html.php' ?>
+<link href="../assets/product_page_style.css" rel="stylesheet">
+<link href="../assets/product_page_style_2.css" rel="stylesheet">
 
 <div class="container-fluid">
     <div class="content-wrapper">
@@ -61,11 +33,6 @@
                         <a href="/dodajdokoszyka?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
                            role="button">Dodaj
                             do koszyka</a>
-                    </div>
-                    <div class="btn-group wishlist">
-                        <button type="button" class="btn btn-danger">
-                            Add to wishlist
-                        </button>
                     </div>
                 </div>
             </div>
@@ -117,6 +84,7 @@
     </div>
 </div>
 <hr>
+<?php include 'footer.html.php' ?>
 
 
 </body>
