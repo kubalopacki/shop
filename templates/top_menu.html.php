@@ -27,7 +27,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/products">Sklep</a>
-            <!--<a class="navbar-brand" href="/sessionclear">Wyczyść sesję</a>!-->
+            <a class="navbar-brand" href="/sessionclear">Wyczyść sesję</a>
+            <a class="navbar-brand" href="/newproduct">Nowy produkt</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
