@@ -12,13 +12,17 @@ $data = [
     'name_' => 'te',
     'price' => 123,
 ];
+function magia($data)
+{
+    foreach ($data as $column => $value):
+        echo "INSERT INTO 'products' ('$column') VALUES('$value');" . PHP_EOL;
 
-$sql = magie($data);
 
-echo $sql; // INSERT INTO `products` (`name_`, `price`) VALUES ('te', 123);
+    endforeach;
+}
 
 
-$ilosc = $pdo->exec($sql);
+magia($data);
 
 
 
