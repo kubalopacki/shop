@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="col-sm-12 col-md-12">
             <?php if (empty($_SESSION['cart'])): ?>
                 Koszyczek jest pusty ziomuś
             <?php else: ?>
@@ -52,8 +52,9 @@
                             </a>
                         </td>
                     </tr>
-                    <?php endforeach; ?>
+
                     <?php $suma[] = $tablica[$id]['price'] * $quantity ?>
+                    <?php endforeach; ?>
                     <tr>
                         <td>  </td>
                         <td>  </td>

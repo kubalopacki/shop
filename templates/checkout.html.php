@@ -35,14 +35,15 @@
         <div class="row" style="margin-bottom:15px">
             <div class="col-xs-12">
                 <div class="btn-group pull-right" role="group" aria-label="..." style="margin-top:10px;">
-                    <a href="/katalog">
+                    <a href="/products">
                         <button type="button" class="btn btn-default btn-info"><span class="fa fa-arrow-left"></span>Powrót
                             do sklepu
                         </button>
                     </a>
-                    <button type="button" class="btn btn-default btn-success"><span class="fa fa-shopping-cart"></span>Do
+                    <a href="/adress" class="btn btn-default btn-success"><span
+                                class="fa fa-shopping-cart"></span>Do
                         kasy
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

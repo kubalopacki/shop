@@ -1,0 +1,1 @@
+Dodawanie nowego produktu w panelu admina;

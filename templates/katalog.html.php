@@ -17,7 +17,7 @@
                             <a href="/product?id=<?php echo $product['product_id'] ?>"
                                class="btn btn-primary"
                                role="button">Więcej</a>
-                            <a href="/dodajdokoszyka?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
+                            <a href="/add_to_cart?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
                                role="button">Dodaj
                                 do koszyka</a>
                         </p>

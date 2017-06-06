@@ -28,13 +28,17 @@
             </button>
             <a class="navbar-brand" href="/products">Sklep</a>
             <a class="navbar-brand" href="/sessionclear">Wyczyść sesję</a>
-            <a class="navbar-brand" href="/newproduct">Nowy produkt</a>
+            <a class="navbar-brand" href="/add_new_product">Nowy produkt</a>
+            <a class="navbar-brand" href="/login">Zaloguj się</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+
             <form class="navbar-form navbar-right">
                 <a href="/cart" class="btn btn-default" role="button">Koszyk</a>
                 <a href="/cart">Ilość produktów w koszyku(<?php echo array_sum($_SESSION['cart'] ?? []) ?>)</a>
+
             </form>
         </div>
     </div>
+
 </nav>

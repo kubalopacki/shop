@@ -30,7 +30,7 @@
                     <div class="product-stock">In Stock</div>
                     <hr>
                     <div class="btn-group cart">
-                        <a href="/dodajdokoszyka?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
+                        <a href="/add_to_cart?id=<?php echo $product['product_id'] ?>" class="btn btn-default"
                            role="button">Dodaj
                             do koszyka</a>
                     </div>
