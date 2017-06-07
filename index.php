@@ -10,12 +10,13 @@ require_once __DIR__ . '/lib/connection.php';
 require_once __DIR__ . '/lib/functions.php';
 
 session_start();
+print_r($_SESSION);
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = trim($uri, '/');
 $segments = explode('/', $uri);
 $controller = empty($uri) ? 'homepage' : array_shift($segments);
-$path = __DIR__."/controller/{$controller}.php";
+$path = __DIR__ . "/controller/{$controller}.php";
 
 if (is_readable($path)) {
     require_once $path;

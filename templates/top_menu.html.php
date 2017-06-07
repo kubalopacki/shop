@@ -27,9 +27,16 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/products">Sklep</a>
-            <a class="navbar-brand" href="/sessionclear">Wyczyść sesję</a>
-            <a class="navbar-brand" href="/add_new_product">Nowy produkt</a>
-            <a class="navbar-brand" href="/login">Zaloguj się</a>
+            <?php if (false === isset($_SESSION['admin']) && false === isset($_SESSION['user'])): ?>
+                <a class="navbar-brand" href="/login">Zaloguj się</a>
+            <?php elseif (isset($_SESSION['user'])): ?>
+                <a class="navbar-brand" href="/logout">Wyloguj się</a>
+                <a class="navbar-brand" href="/panel">Moje konto</a>
+            <?php else: ?>
+                <a class="navbar-brand" href="/add_new_product">Nowy produkt</a>
+                <a class="navbar-brand" href="/logout">Wyloguj się</a>
+                <a class="navbar-brand" href="/panel">Moje konto</a>
+            <?php endif; ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 

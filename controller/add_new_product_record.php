@@ -14,7 +14,9 @@ $data = [
     'full_name' => $_POST['producer_model'],
     'image' => $_POST['image'],
 ];
-function magia($data)
+
+
+function insert($data, $dbtable)
 {
     $fields = array_keys($data); //przypisuje zmiennej fields klucze z $data w postaci tablicy
     $fields = array_map(function ($element) {
@@ -28,13 +30,13 @@ function magia($data)
     }, $values);
     $values = implode(', ', $values);
 
-    $sql = "INSERT INTO `products` ($fields) VALUES($values);";
+    $sql = "INSERT INTO `$dbtable` ($fields) VALUES($values);";
     echo $sql;
     return $sql;
 
 }
 
-$stmt = $pdo->exec(magia($data));
+$stmt = $pdo->exec(insert($data, "products"));
 
 /*
 $data = [

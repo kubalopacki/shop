@@ -10,3 +10,4 @@ foreach ($products as $item) {
 }
 
 require TEMPLATES_PATH . '/cart.html.php';
+

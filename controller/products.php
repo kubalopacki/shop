@@ -1,6 +1,6 @@
 <?php
 
-$sql = 'SELECT * FROM products ORDER BY name_ DESC ';
+$sql = 'SELECT * FROM products ORDER BY name_ ASC ';
 $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();

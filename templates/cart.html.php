@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <?php if (empty($_SESSION['cart'])): ?>
-                Koszyczek jest pusty ziomuś
+                Koszyk jest pusty!
             <?php else: ?>
                 <table class="table table-hover">
                     <thead>

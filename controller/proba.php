@@ -45,4 +45,4 @@ function magia($data)
     return $sql;
 }
 
-echo magia($data);
+echo insert($data);
