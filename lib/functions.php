@@ -42,12 +42,20 @@ function update($data, $dbtable, $login, $haslo)
     }, $values);
     $values = implode(', ', $values);
     */
+    $i = 1;
     foreach ($data as $column => $value)
+        if ($i < 2) {
+            $fields = "$column='$value'";
+            $i = 2;
+        } else {
+            $fields = "$fields, $column='$value'";
+        }
 
 
-        $sql = "UPDATE `$dbtable` SET `$column` = '$value' WHERE 'login'=$login AND 'password'='$haslo'";
+    $sql = "UPDATE `$dbtable` SET $fields WHERE login='$login'";
 
     echo $sql;
     return $sql;
 
 }
+
