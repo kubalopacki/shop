@@ -21,5 +21,7 @@ if ($admin) {
     redirect('/panel', 303);
 }
 
-redirect('/login', 403);
+$_SESSION['flashMessage'] = "Nie możesz się zalogować ziomuś";
+
+redirect($_SERVER['HTTP_REFERER'], 403);
 
