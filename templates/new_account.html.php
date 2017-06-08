@@ -1,7 +1,7 @@
 <?php $title = "Nowe konto" ?>
 <?php include 'top_menu.html.php' ?>
 
-<form class="form-horizontal">
+<form method="post" action="/create_new_account" class="form-horizontal">
     <fieldset>
 
         <!-- Form Name -->
@@ -11,7 +11,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="login_email">E-mail</label>
             <div class="col-md-4">
-                <input id="login_email" name="login_email" type="text" placeholder="jan.kowalski@gmail.com"
+                <input id="login_email" name="login" type="text" placeholder="jan.kowalski@gmail.com"
                        class="form-control input-md" required="">
 
             </div>

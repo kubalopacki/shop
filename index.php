@@ -10,7 +10,7 @@ require_once __DIR__ . '/lib/connection.php';
 require_once __DIR__ . '/lib/functions.php';
 
 session_start();
-print_r($_SESSION);
+//print_r($_SESSION);
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = trim($uri, '/');

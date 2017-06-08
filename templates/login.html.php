@@ -24,7 +24,7 @@
                     <a href="#" class="pull-right need-help"></a><span class="clearfix"></span>
                 </form>
             </div>
-            <a href="/create_an_account" class="text-center new-account">Utwórz konto </a>
+            <a href="/new_account" class="text-center new-account">Utwórz konto </a>
         </div>
     </div>
 </div>

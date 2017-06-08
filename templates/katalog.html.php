@@ -1,5 +1,4 @@
 <?php $title = "Katalog" ?>
-
 <?php include 'top_menu.html.php' ?>
 
 <div class="container">

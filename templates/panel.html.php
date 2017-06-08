@@ -1,4 +1,3 @@
-<?php print_r($_SESSION) ?>
 <?php $title = "Panel użytkownika" ?>
 <?php include 'top_menu.html.php' ?>
 

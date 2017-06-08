@@ -1,9 +1,7 @@
 <?php
 
-print_r($_POST);
 
 $login = $_SESSION['user']['login'];
-$password = $_SESSION['user']['password'];
-$pdo->exec(update($_POST, "customers", "$login", "$password"));
+$pdo->exec(update($_POST, "customers", "$login"));
 
-//redirect('/', 303);
+redirect('/', 303);
