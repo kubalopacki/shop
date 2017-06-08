@@ -13,7 +13,8 @@
                        for="adres">Imię i nazwisko</label>
                 <div class="col-md-4">
                     <input id="adres" name="adres" type="text"
-                           value="<?php echo $dane['imie_nazwisko'] ?>" class="form-control input-md"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['imie_nazwisko'] ?>"
+                           class="form-control input-md"
                            required="">
 
                 </div>
@@ -23,7 +24,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="ulica">Ulica</label>
                 <div class="col-md-4">
-                    <input id="ulica" name="ulica" type="text" value="<?php echo $dane['ulica'] ?>"
+                    <input id="ulica" name="ulica" type="text"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['ulica'] ?>"
                            class="form-control input-md" required="">
 
                 </div>
@@ -34,7 +36,8 @@
                 <label class="col-md-4 control-label" for="nrdomu">Numer domu</label>
                 <div class="col-md-4">
                     <input id="nrdomu" name="nrdomu" type="text"
-                           value="<?php echo $dane['nr_domu'] ?>" class="form-control input-md"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['nr_domu'] ?>"
+                           class="form-control input-md"
                            required="">
 
                 </div>
@@ -46,7 +49,7 @@
                        for="kodpoczotwy">Kod pocztowy</label>
                 <div class="col-md-4">
                     <input id="kodpocztowy" name="kodpocztowy" type="text"
-                           value="<?php echo $dane['kod_pocztowy'] ?>"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['kod_pocztowy'] ?>"
                            class="form-control input-md" required="">
 
                 </div>
@@ -56,7 +59,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="miasto">Miasto</label>
                 <div class="col-md-4">
-                    <input id="miasto" name="miasto" type="text" value="<?php echo $dane['miasto'] ?>"
+                    <input id="miasto" name="miasto" type="text"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['miasto'] ?>"
                            class="form-control input-md"
                            required="">
 
@@ -69,12 +73,11 @@
                        for="nrtelefonu">Numer telefonu</label>
                 <div class="col-md-4">
                     <input id="nrtelefonu" name="nrtelefonu" type="text"
-                           value="<?php echo $dane['telefon'] ?>"
+                           value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['telefon'] ?>"
                            class="form-control input-md" required="">
 
                 </div>
             </div>
-
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="kodrabatowy">Kod rabatowy</label>

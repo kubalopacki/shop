@@ -9,8 +9,8 @@
                 <img class="profile-img"
                      src="https://unsplash.it/96/96/?random"
                      alt="">
-                <form method="post" action="/sing-in" class="form-signin">
-                    <input name="login" type="text" class="form-control" placeholder="e-mail" required autofocus>
+                <form method="post" action="/sign_in" class="form-signin">
+                    <input name="login" type="text" class="form-control" placeholder="login" required autofocus>
                     <input name="password" type="password" class="form-control" placeholder="hasło" required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
                         Zaloguj się

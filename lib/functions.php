@@ -28,7 +28,7 @@ function insert($data, $dbtable)
 
 }
 
-function update($data, $dbtable, $login)
+function update($data, $dbtable, $customer_id)
 {
     $fields = [];
     foreach ($data as $column => $value) {
@@ -38,7 +38,7 @@ function update($data, $dbtable, $login)
     $fields = implode(', ', $fields);
 
 
-    $sql = "UPDATE `$dbtable` SET $fields WHERE login='$login'";
+    $sql = "UPDATE `$dbtable` SET $fields WHERE customer_id='$customer_id'";
 
     echo $sql;
     return $sql;
