@@ -39,6 +39,8 @@ INSERT INTO `products` (`full_name`, `image`, `product_id`, `name_`, `price`) VA
 ('BSD Acid Fat',	'https://cdn.avebmx.pl/image/000BART/Siodelko-BSD-Acid-Fat-Pivotal-1.jpg',	20,	'Siodło',	119),
 ('BSD Crackpipe',	'https://cdn.avebmx.pl/image/Sebek/bsdproductspegscrackpipe001.jpg',	21,	'Pegi',	39),
 ('Helmet ',	'https://cdn.avebmx.pl/image/0000Ave/kask-harsh-blue-przod.jpg',	22,	'Kask',	229),
-('Burton Tinder',	'https://cdn.avebmx.pl/image/BURNT%20ORCHE/Tinder/Burton/Plecaki/AveBMX_Ada%C5%9B/98f2fd0774bcd2d5137186a84abca8ba.jpg',	23,	'Plecak',	349);
+('Burton Tinder',	'https://cdn.avebmx.pl/image/BURNT%20ORCHE/Tinder/Burton/Plecaki/AveBMX_Ada%C5%9B/98f2fd0774bcd2d5137186a84abca8ba.jpg',	23,	'Plecak',	349),
+('WTP Justice',	'https://cdn.avebmx.pl/image/Justice/WTP/Rowery/AveBMX_Ada%C5%9B/WTP_2017_Justice_navy_blue_45F.jpg',	26,	'Rower',	2349),
+('TSG Riot',	'https://cdn.avebmx.pl/image/TSG%202017/0000Ave/76042_140_01-1.JPG',	27,	'Skarpetki',	169);
 
--- 2017-05-31 12:07:44
+-- 2017-06-09 11:08:38
