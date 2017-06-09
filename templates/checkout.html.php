@@ -32,21 +32,49 @@
                 </table>
             </div>
         <?php endforeach; ?>
-        <div class="row" style="margin-bottom:15px">
-            <div class="col-xs-12">
-                <div class="btn-group pull-right" role="group" aria-label="..." style="margin-top:10px;">
-                    <a href="/products">
-                        <button type="button" class="btn btn-default btn-info"><span class="fa fa-arrow-left"></span>Powrót
-                            do sklepu
-                        </button>
-                    </a>
-                    <a href="/adress" class="btn btn-default btn-success"><span
-                                class="fa fa-shopping-cart"></span>Do
-                        kasy
-                    </a>
+
+    </div>
+    <div class="container">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend></legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="selectbasic">Wybierz sposób płatności</label>
+                    <div class="col-md-4">
+                        <select id="selectbasic" name="selectbasic" class="form-control">
+                            <option value="">Odbiór osobisty (0 zł)</option>
+                            <option value="">Płatność przy odbiorze Paczkomaty (12 zł)</option>
+                            <option value="">Płatność przy odbiorze poczta polska (17 zł)</option>
+                            <option value="">Płatność przy odbiorze kurier DHL (20 zł)</option>
+                            <option value="">Przedpłata na konto (10 zł)</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="panel-footer">
+                    <div class="row text-center">
+                        <div class="col-xs-9">
+                            <h4 class="text-right">Suma<strong>Suma</strong></h4>
+                        </div>
+                        <div class="col-xs-3">
+                            <a href="/adress" type="button" class="btn btn-success btn-block">
+                                Kupuję!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="container">
+        <form class="form-horizontal">
+            <fieldset>
 
     </div>
 

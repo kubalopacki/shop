@@ -59,22 +59,8 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong><?php echo array_sum($suma) ?></strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td><h5>Koszt wysyłki</h5></td>
-                        <td class="text-right"><h5><strong>18 PLN</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong><?php echo array_sum($suma) + 18 ?></strong></h3></td>
+                        <td><h5>Wartość koszyka:</h5></td>
+                        <td class="text-right"><h5><strong><?php echo array_sum($suma)." PLN" ?></strong></h5></td>
                     </tr>
                     <tr>
                         <td>  </td>
