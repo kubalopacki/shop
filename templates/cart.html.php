@@ -60,8 +60,10 @@
                         <td>  </td>
                         <td>  </td>
                         <td><h5>Wartość koszyka:</h5></td>
-                        <td class="text-right"><h5><strong><?php echo array_sum($suma)." PLN" ?></strong></h5></td>
+                        <td class="text-right"><h5><strong><?php echo array_sum($suma) . " PLN" ?></strong></h5></td>
                     </tr>
+                    <?php $cart_value = array_sum($suma) ?>
+                    <?php $_SESSION['cart_value'] = $cart_value ?>
                     <tr>
                         <td>  </td>
                         <td>  </td>

@@ -53,3 +53,13 @@ function newAccount($login, $password)
     return $sql;
 }
 
+function createOrder($imie_nazwisko, $ulica, $numer_domu, $kod_pocztowy, $miasto, $numer_telefonu, $customer_id, $komentarz)
+{
+    $sql = "INSERT INTO `orders` 
+(imie_nazwisko, ulica, numer_domu, kod_pocztowy, miasto, numer_telefonu, customer_id, komentarz) 
+VALUES ('$imie_nazwisko','$ulica','$numer_domu','$kod_pocztowy','$miasto','$numer_telefonu','$customer_id','$komentarz')";
+
+    echo $sql;
+    return $sql;
+
+}

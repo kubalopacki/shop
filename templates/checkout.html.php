@@ -1,3 +1,4 @@
+<?php print_r($_SESSION['cart_value']) ?>
 <?php $title = "Podsumowanie" ?>
 <?php include 'top_menu.html.php' ?>
     <link href="../assets/checkout2_styles.css" rel="stylesheet">
@@ -35,37 +36,45 @@
 
     </div>
     <div class="container">
-        <form class="form-horizontal">
+        <form method="post" action="/adress" class="form-horizontal">
             <fieldset>
-
-                <!-- Form Name -->
                 <legend></legend>
-
                 <!-- Select Basic -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Wybierz sposób płatności</label>
                     <div class="col-md-4">
-                        <select id="selectbasic" name="selectbasic" class="form-control">
-                            <option value="">Odbiór osobisty (0 zł)</option>
-                            <option value="">Płatność przy odbiorze Paczkomaty (12 zł)</option>
-                            <option value="">Płatność przy odbiorze poczta polska (17 zł)</option>
-                            <option value="">Płatność przy odbiorze kurier DHL (20 zł)</option>
-                            <option value="">Przedpłata na konto (10 zł)</option>
+                        <select id="comboA" onchange="getComboA(this.selectedOptions[0].dataset.price)"
+                                name="selectbasic"
+                                class="form-control">
+                            <option data-price="0" value="1">Odbiór osobisty (0 zł)</option>
+                            <option data-price="12" value="2">Płatność przy odbiorze Paczkomaty (12 zł)</option>
+                            <option data-price="17" value="3">Płatność przy odbiorze poczta polska (17 zł)</option>
+                            <option data-price="20" value="4">Płatność przy odbiorze kurier DHL (20 zł)</option>
+                            <option data-price="10" value="5">Przedpłata na konto (10 zł)</option>
                         </select>
                     </div>
                 </div>
                 <div class="panel-footer">
                     <div class="row text-center">
                         <div class="col-xs-9">
-                            <h4 class="text-right">Suma<strong>Suma</strong></h4>
+                            <h4 class="text-right">Suma <strong id="suma"></strong> PLN</h4>
                         </div>
                         <div class="col-xs-3">
-                            <a href="/adress" type="button" class="btn btn-success btn-block">
-                                Kupuję!
-                            </a>
+                            <button type="submit" class="btn btn-success btn-block">
+                                Do kasy
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                <script>
+                    function getComboA(value) {
+                        var cart_value = <?php echo $_SESSION['cart_value'] ?>;
+                        var value = cart_value + parseInt(value);
+                        document.getElementById('suma').innerHTML = value;
+                    }
+                    getComboA(0);
+                </script>
 
 
             </fieldset>

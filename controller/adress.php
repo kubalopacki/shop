@@ -1,5 +1,6 @@
 <?php
 
+$_SESSION['shipment_method'] = $_POST['selectbasic'];
 
 if (isset($_SESSION['user']['customer_id'])) {
     $customer_id = $_SESSION['user']['customer_id'];
