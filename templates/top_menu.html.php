@@ -37,6 +37,9 @@
                 <a class="navbar-brand" href="/add_new_product">Nowy produkt</a>
                 <a class="navbar-brand" href="/logout">Wyloguj się</a>
                 <a class="navbar-brand" href="/panel">Moje konto</a>
+                <a class="navbar-brand" href="/zamowienia">Historia zamówień</a>
+                <a class="navbar-brand" href="/zamowienia_do_wysyłki">Zamówienia do wysyłki</a>
+
             <?php endif; ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

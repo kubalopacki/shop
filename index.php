@@ -8,6 +8,7 @@ define('TEMPLATES_PATH', __DIR__ . '/templates');
 
 require_once __DIR__ . '/lib/connection.php';
 require_once __DIR__ . '/lib/functions.php';
+require_once __DIR__ . '/lib/config.php';
 
 session_start();
 //print_r($_SESSION);

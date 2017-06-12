@@ -46,11 +46,16 @@
                         <select id="comboA" onchange="getComboA(this.selectedOptions[0].dataset.price)"
                                 name="selectbasic"
                                 class="form-control">
-                            <option data-price="0" value="1">Odbiór osobisty (0 zł)</option>
-                            <option data-price="12" value="2">Płatność przy odbiorze Paczkomaty (12 zł)</option>
-                            <option data-price="17" value="3">Płatność przy odbiorze poczta polska (17 zł)</option>
-                            <option data-price="20" value="4">Płatność przy odbiorze kurier DHL (20 zł)</option>
-                            <option data-price="10" value="5">Przedpłata na konto (10 zł)</option>
+                                <?php foreach ($config['shipment'] as $id => $shipment): ?>
+                                    <option data-price="<?php echo $shipment['price']?>" value="<?php echo $id ?>">
+                                        <?php echo $shipment['name'] ?>
+                                    </option>
+                                <?php endforeach ?>
+<!--                            <option data-price="0" value="1">Odbiór osobisty (0 zł)</option>-->
+<!--                            <option data-price="12" value="2">Płatność przy odbiorze Paczkomaty (12 zł)</option>-->
+<!--                            <option data-price="17" value="3">Płatność przy odbiorze poczta polska (17 zł)</option>-->
+<!--                            <option data-price="20" value="4">Płatność przy odbiorze kurier DHL (20 zł)</option>-->
+<!--                            <option data-price="10" value="5">Przedpłata na konto (10 zł)</option>-->
                         </select>
                     </div>
                 </div>

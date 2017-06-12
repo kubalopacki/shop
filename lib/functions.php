@@ -53,16 +53,6 @@ function newAccount($login, $password)
     return $sql;
 }
 
-function createOrder($imie_nazwisko, $ulica, $numer_domu, $kod_pocztowy, $miasto, $numer_telefonu, $customer_id, $komentarz)
-{
-    $sql = "INSERT INTO `orders` 
-(imie_nazwisko, ulica, numer_domu, kod_pocztowy, miasto, numer_telefonu, customer_id, komentarz) 
-VALUES ('$imie_nazwisko','$ulica','$numer_domu','$kod_pocztowy','$miasto','$numer_telefonu','$customer_id','$komentarz')";
-
-    echo $sql;
-    return $sql;
-
-}
 
 function readDB($sesja)
 {
@@ -84,3 +74,41 @@ function readDB($sesja)
     return $sql;
 
 }
+
+
+
+/**
+ * Funkcja zmieniająca jedną wartość w tabeli(np. zmiana statusu zamówienia)
+ *
+ * @param $dbname string Nazwa tabelki
+ * @param $column string Kolumna, którą chcesz zmienić
+ * @param $row
+ * @param string $order_id Identyfikator zamówienia którego status ma zostać zmieniony
+ * @param string $new Nowa wartość dla kolumny $column
+ * @return string Zwraca wygenerowane polecenie MySql
+ *
+ */
+function upadteOneColumn($dbname, $column, $row, $new, $order_id)
+{
+    $sql = "UPDATE `$dbname` SET $column='$new' WHERE $row='$order_id'";
+
+    echo $sql;
+    return $sql;
+
+}
+
+
+
+
+function updateSet (array $fields) {
+    $fields = [];
+    foreach ($data as $column => $value) {
+        $fields[] = "$column='$value'";
+    }
+
+    $sqlPart = implode(', ', $fields);
+
+    return $sqlPart;
+}
+
+
