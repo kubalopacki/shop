@@ -63,3 +63,24 @@ VALUES ('$imie_nazwisko','$ulica','$numer_domu','$kod_pocztowy','$miasto','$nume
     return $sql;
 
 }
+
+function readDB($sesja)
+{
+    $fields = array_keys($sesja); //przypisuje zmiennej fields klucze z $data w postaci tablicy
+    //$fields = array_map(function ($element) {
+    //    return "`$element`";
+    //}, $fields);
+    $fields = implode(', ', $fields);
+
+    $values = array_values($sesja);
+    $values = array_map(function ($element) {
+        return "'$element'";
+    }, $values);
+    $values = implode(', ', $values);
+
+    $sql = "SELECT * FROM `products` WHERE product_id  IN ($fields)";
+
+    echo $sql;
+    return $sql;
+
+}
