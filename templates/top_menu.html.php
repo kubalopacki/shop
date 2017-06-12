@@ -1,4 +1,5 @@
-<?php print_r($_SESSION['cart_value']);  ?><!DOCTYPE html>
+<?php print_r($_SESSION['cart_value']);  ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
