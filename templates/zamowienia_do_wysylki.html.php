@@ -24,7 +24,23 @@
             <tbody>
             <tr>
                 <td><?php echo $record['order_id'] ?></td>
-                <td class="important"><?php echo $config['status'][$record['status']]['name'] ?></td>
+                <td class="important">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="order_update<?php echo $record['order_id'] ?>">Wybierz aktualny status
+                                zamówienia</label>
+                            <div class="col-md-4">
+                                <select id="order_update<?php echo $record['order_id'] ?>" name="order_update<?php echo $record['order_id'] ?>"
+                                        class="form-control">
+                                    <option value="1">Zamówienie zostało złożone</option>
+                                    <option value="2">Oczekuje na płatność</option>
+                                    <option value="3">Zapłacone</option>
+                                    <option value="4">Wysłane</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </td>
                 <td><?php echo $config['shipment'][$record['sposob_wysylki']]['name'] ?></td>
                 <td><?php echo $record['imie_nazwisko'] ?></td>
                 <td><?php echo $record['ulica'] ?></td>
@@ -35,22 +51,7 @@
                 <td><?php echo $record['wartosc_zamowienia'] ?></td>
                 <td><a href="/szczegoly_zamowienia?orderid=<?php echo $record['order_id'] ?>">Zobacz szczegóły
                         zamówienia</a></td>
-                <td>
-                    <fieldset>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="order_update">Wybierz aktualny status
-                                zamówienia</label>
-                            <div class="col-md-4">
-                                <select id="order_update" name="order_update" class="form-control">
-                                    <option value="1">Zamówienie zostało złożone</option>
-                                    <option value="2">Oczekuje na płatność</option>
-                                    <option value="3">Zapłacone</option>
-                                    <option value="4">Wysłane</option>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
-                </td>
+
 
             </tr>
             <?php endforeach; ?>
