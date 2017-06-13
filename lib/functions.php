@@ -76,7 +76,6 @@ function readDB($sesja)
 }
 
 
-
 /**
  * Funkcja zmieniająca jedną wartość w tabeli(np. zmiana statusu zamówienia)
  *
@@ -98,15 +97,15 @@ function upadteOneColumn($dbname, $column, $row, $new, $order_id)
 }
 
 
-
-
-function updateSet (array $fields) {
+function updateSet(array $data)
+{
     $fields = [];
     foreach ($data as $column => $value) {
         $fields[] = "$column='$value'";
     }
 
     $sqlPart = implode(', ', $fields);
+
 
     return $sqlPart;
 }

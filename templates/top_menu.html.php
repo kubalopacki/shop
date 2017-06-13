@@ -29,17 +29,23 @@
             </button>
             <a class="navbar-brand" href="/products">Sklep</a>
             <?php if (false === isset($_SESSION['admin']) && false === isset($_SESSION['user'])): ?>
-                <a class="navbar-brand" href="/login">Zaloguj się</a>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/login">Zaloguj się</a></li>
+                </ul>
             <?php elseif (isset($_SESSION['user'])): ?>
-                <a class="navbar-brand" href="/logout">Wyloguj się</a>
-                <a class="navbar-brand" href="/panel">Moje konto</a>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/moje_zamowienia">Moje zamówienia</a></li>
+                    <li><a href="/logout">Wyloguj się</a></li>
+                    <li><a href="/panel">Moje konto</a></li>
+                </ul>
             <?php else: ?>
-                <a class="navbar-brand" href="/add_new_product">Nowy produkt</a>
-                <a class="navbar-brand" href="/logout">Wyloguj się</a>
-                <a class="navbar-brand" href="/panel">Moje konto</a>
-                <a class="navbar-brand" href="/zamowienia">Historia zamówień</a>
-                <a class="navbar-brand" href="/zamowienia_do_wysyłki">Zamówienia do wysyłki</a>
-
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/add_new_product">Nowy produkt</a></li>
+                    <li><a href="/logout">Wyloguj się</a></li>
+                    <li><a href="/panel">Moje konto</a></li>
+                    <li><a href="/zamowienia">Historia zamówień</a></li>
+                    <li><a href="/zamowienia_do_wysylki">Zamówienia do wysyłki</a></li>
+                </ul>
             <?php endif; ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

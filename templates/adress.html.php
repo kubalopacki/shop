@@ -100,13 +100,13 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="button1id"></label>
                     <div class="col-md-8">
-                        <button id="button1id" type="submit" class="btn btn-success">Kupuję
+                        <button id="button1id" value="1" type="submit" name="status" class="btn btn-success">Kupuję
                         </button>
                     </div>
                 </div>
             </div>
-</div>
 
+</div>
 
 <!--</div>
 Text input
@@ -124,7 +124,6 @@ Text input
 <!--<div class="container">
     <form class="form-horizontal" method="post" action="/finish_order">
         <fieldset>
-
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textarea">Komentarz do zamówienia</label>
                 <div class="col-md-4">
@@ -135,7 +134,6 @@ Text input
         </fieldset>
     </form>
 </div>
-
 
 <div class="container">
     <div class="form-group">
@@ -159,5 +157,4 @@ Text input
     </div>
 </div>
 -->
-
 <?php include 'footer.html.php' ?>
