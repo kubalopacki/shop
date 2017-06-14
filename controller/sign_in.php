@@ -9,6 +9,7 @@ $user = $user_stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user) {
     $_SESSION['user'] = $user;
+    $_SESSION['navbar'] = 'user';
     redirect('/products', 303);
 }
 
@@ -18,6 +19,7 @@ $admin = $admin_stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($admin) {
     $_SESSION['admin'] = $admin;
+    $_SESSION['navbar'] = 'admin';
     redirect('/panel', 303);
 }
 

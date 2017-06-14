@@ -5,7 +5,9 @@ $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
-require TEMPLATES_PATH . '/katalog.html.php';
+$twig->display('katalog.twig', [
+    'products' => $products,
+]);
 
 
 

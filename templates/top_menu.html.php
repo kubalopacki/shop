@@ -33,7 +33,8 @@
                 </ul>
             <?php elseif (isset($_SESSION['user'])): ?>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/moje_zamowienia">Moje zamówienia</a></li>
+                    <li class="active"><a href="/moje_zamowienia">Moje
+                            zamówienia</a></li>
                     <li><a href="/logout">Wyloguj się</a></li>
                     <li><a href="/panel">Moje konto</a></li>
                 </ul>

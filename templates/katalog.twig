@@ -1,0 +1,42 @@
+{% extends 'parts/content.twig' %}
+
+{% block title 'Produkty' %}
+
+{% block container %}
+    <div class="col-md-12">
+        <?php foreach ($products as $product): ?>
+        {% for product in products %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="/product?id={{ product.product_id }}">
+                        <img class="image" height="300px"
+                             src="{{ product.image }}" alt=""/>
+                    </a>
+                    <div class="caption">
+                        <h3>{{ product.name_ }}</h3>
+                        <p>Cena:<?php echo $product['price'] . " PLN" ?></p>
+                        <a href="/product?id={{ product.product_id }}"
+                           class="btn btn-primary"
+                           role="button">
+                            Więcej
+                        </a>
+                        <a href="/add_to_cart?id={{ product.product_id }}"
+                           class="btn btn-default"
+                           role="button"
+                           onclick="dodanoDoKoszyka()">
+                            Dodaj do koszyka
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block body_scripts %}
+    <script>
+        function dodanoDoKoszyka() {
+            alert("Produkt został dodany do koszyka")
+        }
+    </script>
+{% endblock %}

@@ -1,5 +1,7 @@
 <?php
 
+define("ROOTPATH", realpath(__DIR__ . '/..'));
+
 $config = [
     'shipment' => [
         1 => [
