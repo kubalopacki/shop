@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="../assets/shop_style.css" rel="stylesheet">
 </head>
 

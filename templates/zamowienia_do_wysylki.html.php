@@ -27,12 +27,15 @@
                 <td class="important">
                     <fieldset>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="order_update<?php echo $record['order_id'] ?>">Wybierz aktualny status
+                            <label class="col-md-4 control-label" for="order_update<?php echo $record['order_id'] ?>">Wybierz
+                                aktualny status
                                 zamówienia</label>
                             <div class="col-md-4">
-                                <select id="order_update<?php echo $record['order_id'] ?>" name="order_update<?php echo $record['order_id'] ?>"
-                                        class="form-control">
-                                    <option value="1">Zamówienie zostało złożone</option>
+                                <select id="order_update<?php echo $record['order_id'] ?>"
+                                        name="order_update<?php echo $record['order_id'] ?>"
+                                        class="form-control order_update"
+                                        data-order_id="<?php echo $record['order_id'] ?>">
+                                    <option value=" 1">Zamówienie zostało złożone</option>
                                     <option value="2">Oczekuje na płatność</option>
                                     <option value="3">Zapłacone</option>
                                     <option value="4">Wysłane</option>
@@ -49,8 +52,9 @@
                 <td><?php echo $record['miasto'] ?></td>
                 <td><?php echo $record['numer_telefonu'] ?></td>
                 <td><?php echo $record['wartosc_zamowienia'] ?></td>
-                <td><a href="/szczegoly_zamowienia?orderid=<?php echo $record['order_id'] ?>">Zobacz szczegóły
-                        zamówienia</a></td>
+                <td><a href="/order_details?orderid=<?php echo $record['order_id'] ?>">Zobacz szczegóły
+                        zamówienia</a>
+                </td>
 
 
             </tr>
@@ -58,6 +62,14 @@
 
             </tbody>
         </table>
+        <script>
+            $(".order_update").change(function () {
+                $.post('/change_status', {
+                    'order_id': $(this).data('order_id'),
+                    'status': $(this).val()
+                });
+            });
+        </script>
     </div>
 </div>
 

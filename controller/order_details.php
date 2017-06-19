@@ -8,4 +8,13 @@ $stmt->closeCursor();
 
 $table = json_decode($order['szczegoly_zamowienia'], true);
 
+
+require TEMPLATES_PATH . '/order_details.html.php';
+
+/*
 print_r($table);
+
+print_r($order);
+
+print_r($_SESSION);
+*/

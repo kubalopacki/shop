@@ -1,6 +1,7 @@
 <?php $title = "Panel użytkownika" ?>
 <?php include 'top_menu.html.php' ?>
 
+
 <div class="container">
     <form method="post" action="/adress_update" class="form-horizontal">
         <fieldset>
@@ -72,5 +73,25 @@
             </div>
         </fieldset>
     </form>
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Form Name</legend>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="pdf">Wygeneruj pdf</label>
+                <div class="col-md-4">
+                    <a href="generator"
+                    <button id="pdf" name="pdf" class="btn btn-primary">Generuj!</button>
+                    </a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
 </div>
+
+
 <?php include 'footer.html.php' ?>

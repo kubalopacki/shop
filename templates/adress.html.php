@@ -1,5 +1,6 @@
 <?php $title = "Podsumowanie" ?>
 <?php include 'top_menu.html.php' ?>
+
     <div class="container">
         <form class="form-horizontal" method="post" action="/finish_order">
             <fieldset>

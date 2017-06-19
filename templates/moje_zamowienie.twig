@@ -2,6 +2,7 @@
 
 {% block title 'Moje zamówienia' %}
 
+
 {% block container %}
     <div class="col-md-12">
         <div class="panel-group" id="accordion">
@@ -13,7 +14,7 @@
                                href="#collapse{{ order.order_id }}">
                                 Data: {{ order.order_date }}<br>
                                 Wartość zamówienia: {{ order.wartosc_zamowienia }} PLN<br>
-                                Status: {{ config.status.order.status }}
+                                Status: {{ config.status[order.status].name }}
                             </a>
                         </h4>
                     </div>
