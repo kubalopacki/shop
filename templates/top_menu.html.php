@@ -53,7 +53,7 @@
 
             <form class="navbar-form navbar-right">
                 <a href="/cart" class="btn btn-default" role="button">Koszyk</a>
-                <a href="/cart">Ilość produktów w koszyku(<?php echo array_sum($_SESSION['cart'] ?? []) ?>)</a>
+                <a href="/cart">Ilość produktów w koszyku(<span id="stan_koszyka"><?php echo array_sum($_SESSION['cart'] ?? []) ?>)</span></a>
 
             </form>
         </div>

@@ -14,7 +14,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
                 <a href="/cart" class="btn btn-default" role="button">Koszyk</a>
-                <a href="/cart">Ilość produktów w koszyku({{ session.cart | default([]) | sum }})</a>
+                <a href="/cart">Ilość produktów w koszyku(<span
+                            id="stan_koszyka">{{ session.cart | default([]) | sum }}</span>)</a>
             </form>
         </div>
     </div>

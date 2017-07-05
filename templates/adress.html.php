@@ -2,7 +2,7 @@
 <?php include 'top_menu.html.php' ?>
 
     <div class="container">
-        <form class="form-horizontal" method="post" action="/finish_order">
+        <form class="form-horizontal" method="post" action="/finish_order" action="/address_update">
             <fieldset>
 
                 <!-- Form Name -->
@@ -43,15 +43,22 @@
 
                     </div>
                 </div>
+                <script>
+                    var input = document.getElementById('kodpocztowy');
+
+                    input.oninvalid = function (event) {
+                        event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+                    }
+                </script>
 
                 <!-- Text input-->
                 <div class="form-group">
                     <label class="col-md-4 control-label"
-                           for="kodpoczotwy">Kod pocztowy</label>
+                           for="kodpocztowy">Kod pocztowy</label>
                     <div class="col-md-4">
                         <input id="kodpocztowy" name="kod_pocztowy" type="text"
                                value="<?php if (isset($_SESSION['user']['customer_id'])) echo $dane['kod_pocztowy'] ?>"
-                               class="form-control input-md" required="">
+                               class="form-control input-md" title="Np. 58-100" required="" pattern="[0-9]{2}-[0-9]{3}">
 
                     </div>
                 </div>
@@ -91,12 +98,13 @@
                     <div class="col-md-4">
                         <div class="checkbox">
                             <label for="regulamin-">
-                                <input type="checkbox" id="regulamin-" value="">
+                                <input required type="checkbox" id="regulamin" value="">
                                 Zapoznałem się z <a href="/regulamin">regulaminem</a> sklepu
                             </label>
                         </div>
                     </div>
                 </div>
+
                 <div class="container">
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="button1id"></label>
@@ -106,6 +114,7 @@
                         </div>
                     </div>
                 </div>
+
 
     </div>
 

@@ -28,13 +28,25 @@ $finish_order_table['szczegoly_zamowienia'] = $szczegoly_zamowienia;
 $finish_order_table['order_date'] = date('Y-m-d H:i:s');
 $finish_order_table['status'] = $_POST['status'];
 
+$user_data = [];
+$user_data['imie_nazwisko'] = $finish_order_table['imie_nazwisko'];
+$user_data['ulica'] = $finish_order_table['ulica'];
+$user_data['nr_domu'] = $finish_order_table['numer_domu'];
+$user_data['kod_pocztowy'] = $finish_order_table['kod_pocztowy'];
+$user_data['miasto'] = $finish_order_table['miasto'];
+$user_data['telefon'] = $finish_order_table['numer_telefonu'];
 
-//print_r($finish_order_table);
 
+$polecenie_sql = build_insert_sql_query($finish_order_table, "orders");
 
-$polecenie = insert($finish_order_table, "orders");
+$pdo->exec($polecenie_sql);
 
-$pdo->exec($polecenie);
+$polecenie_sql = update($user_data, "customers", $_SESSION['user']['customer_id']);
+
+$pdo->exec($polecenie_sql);
+
+echo $polecenie_sql;
+
 
 unset($_SESSION['cart']);
 unset($_SESSION['cart_value']);

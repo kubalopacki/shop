@@ -7,12 +7,10 @@
             <h1 class="text-center login-title"></h1>
             <?php if (isset($_SESSION['flashMessage'])): ?>
                 <p><?php echo $_SESSION['flashMessage'] ?></p>
-                <?php unset($_SESSION['flashMessage'] ) ?>
+                <?php unset($_SESSION['flashMessage']) ?>
             <?php endif ?>
             <div class="account-wall">
-                <img class="profile-img"
-                     src="https://unsplash.it/96/96/?random"
-                     alt="">
+
                 <form method="post" action="/sign_in" class="form-signin">
                     <input name="login" type="text" class="form-control" placeholder="login" required autofocus>
                     <input name="password" type="password" class="form-control" placeholder="hasło" required>
@@ -33,4 +31,3 @@
     </div>
 </div>
 
-<?php include 'footer.html.php' ?>

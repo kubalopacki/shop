@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO('mysql:host=localhost;dbname=_hello;charset=utf8', 'root', 'root', array(
+$pdo = new PDO('mysql:host=localhost;dbname=shop_bmx;charset=utf8', 'root', 'root', array(
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
 );
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

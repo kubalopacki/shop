@@ -1,7 +1,7 @@
 <?php
 
 $id = $_GET['id'];
-$stmt = $pdo->query("SELECT * FROM _hello.products WHERE product_id = $id");
+$stmt = $pdo->query("SELECT * FROM shop_bmx.products WHERE product_id = $id");
 $product = $stmt->Fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 

@@ -8,7 +8,14 @@ function redirect($url, $code)
     exit(0);
 }
 
-function insert($data, $dbtable)
+/**
+ * Buduje zapytanie sql wstawiające dane z tablicy $data do tabeli $dbtable
+ *
+ * @param $data
+ * @param $dbtable
+ * @return string
+ */
+function build_insert_sql_query($data, $dbtable)
 {
     $fields = array_keys($data); //przypisuje zmiennej fields klucze z $data w postaci tablicy
     $fields = array_map(function ($element) {
@@ -30,6 +37,7 @@ function insert($data, $dbtable)
 
 function update($data, $dbtable, $customer_id)
 {
+
     $fields = [];
     foreach ($data as $column => $value) {
         $fields[] = "$column='$value'";

@@ -5,7 +5,7 @@
         <div class="container">
             <h1>Sukces!</h1>
             <p>Proces przebiegł pomyślnie, możesz zalogować się na swoje konto!</p>
-            <p><a class="btn btn-primary btn-lg" href="/sign_in" role="button">Zaloguj się &raquo;</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/login" role="button">Zaloguj się &raquo;</a></p>
         </div>
     </div>
 

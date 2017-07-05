@@ -3,7 +3,7 @@
 
 
 <div class="container">
-    <form method="post" action="/adress_update" class="form-horizontal">
+    <form method="post" action="/adress_update"  class="form-horizontal">
         <fieldset>
 
             <!-- Form Name -->
@@ -30,7 +30,7 @@
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="nrdomu">Nr domu/mieszkania</label>
+                <label class="col-md-4 control-label" for="nrdomu">Numer domu</label>
                 <div class="col-md-4">
                     <input id="nrdomu" name="nr_domu" type="text" placeholder="" class="form-control input-md"
                            required="">
@@ -60,7 +60,7 @@
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="nrtelefonu">Nr telefonu</label>
+                <label class="col-md-4 control-label" for="nrtelefonu">Numer telefonu</label>
                 <div class="col-md-4">
                     <input id="telefon" name="telefon" type="text" placeholder="000 000 000"
                            class="form-control input-md" required="">
@@ -73,24 +73,7 @@
             </div>
         </fieldset>
     </form>
-    <form class="form-horizontal">
-        <fieldset>
 
-            <!-- Form Name -->
-            <legend>Form Name</legend>
-
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="pdf">Wygeneruj pdf</label>
-                <div class="col-md-4">
-                    <a href="generator"
-                    <button id="pdf" name="pdf" class="btn btn-primary">Generuj!</button>
-                    </a>
-                </div>
-            </div>
-
-        </fieldset>
-    </form>
 </div>
 
 

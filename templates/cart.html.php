@@ -19,7 +19,7 @@
                     </thead>
                     <?php foreach ($_SESSION['cart'] as $id => $quantity): ?>
                     <tbody>
-                    <tr>
+                    <tr id="<?php echo $id ?>">
                         <td class="col-sm-8 col-md-6">
                             <div class="media">
                                 <a class="thumbnail pull-left" href="/product?id=<?php echo $id ?>"> <img
@@ -37,7 +37,7 @@
                             </div>
                         </td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <strong><?php echo $quantity ?></strong>
+                            <strong><span id="ilosc_produktu<?php echo $id ?>"><?php echo $quantity ?></span></strong>
                         </td>
                         <td class="col-sm-1 col-md-1 text-center">
                             <strong><?php echo $tablica[$id]['price'] . " PLN" ?></strong>
@@ -45,25 +45,22 @@
                         <td class="col-sm-1 col-md-1 text-center">
                             <strong><?php echo($quantity * $tablica[$id]['price']) ?> PLN</strong></td>
                         <td class="col-sm-1 col-md-1">
-                            <a href="/remove?id=<?php echo $tablica[$id]['product_id'] ?>">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span>Remove
-                                </button>
+                            <button id="remove" type="button" class="btn btn-danger remove-button"
+                                    data-product_id="<?php echo $id ?>">
+                                <span class="glyphicon glyphicon-remove"></span>Remove
+                            </button>
                             </a>
                         </td>
                     </tr>
 
-                    <?php $suma[] = $tablica[$id]['price'] * $quantity ?>
                     <?php endforeach; ?>
                     <tr>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td><h5>Wartość koszyka:</h5></td>
-                        <td class="text-right"><h5><strong><?php echo array_sum($suma) . " PLN" ?></strong></h5></td>
+                        <td class="text-right"><h5><strong><?php echo $cart_value . " PLN" ?></strong></h5></td>
                     </tr>
-                    <?php $cart_value = array_sum($suma) ?>
-                    <?php $_SESSION['cart_value'] = $cart_value ?>
                     <tr>
                         <td>  </td>
                         <td>  </td>
@@ -78,7 +75,8 @@
                         <td>
                             <a href="/checkout">
                                 <button type="button" class="btn btn-success">Podsumowanie<span
-                                            class="glyphicon glyphicon-play"></span>
+                                            class="glyphicon glyphicon-play" role="button"
+                                            data-product_id="<?php echo $id ?>"></span>
                                 </button>
                             </a>
                         </td>
@@ -90,5 +88,25 @@
     </div>
 </div>
 <?php include 'footer.html.php' ?>
+
+<script>
+/*
+    $(".remove-button").click(function () {
+        var product_id = $(this).data('product_id');
+        $.post('/remove_product_from_cart', {
+                'product_id': product_id
+            },
+            function (data) {
+                if (data.quantity > 0) {
+                    $('#ilosc_produktu' + product_id).html(data.quantity);
+                } else {
+                    $('#tr' + product_id).remove();
+                }
+            });
+
+    })
+    ;
+*/
+</script>
 </body>
 </html>

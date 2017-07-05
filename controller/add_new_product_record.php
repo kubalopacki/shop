@@ -36,7 +36,7 @@ function insert($data, $dbtable)
 
 }
 
-$stmt = $pdo->exec(insert($data, "products"));
+$stmt = $pdo->exec(build_insert_sql_query($data, "products"));
 
 /*
 $data = [

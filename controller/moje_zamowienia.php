@@ -2,7 +2,7 @@
 
 $customerid = $_SESSION['user']['customer_id'];
 
-$sql = "SELECT * FROM `orders` WHERE customer_id='$customerid'";
+$sql = "SELECT * FROM `orders` WHERE customer_id='$customerid' ORDER BY order_id DESC";
 
 $stmt = $pdo->query($sql);
 

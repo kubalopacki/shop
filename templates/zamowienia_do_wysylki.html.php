@@ -22,7 +22,7 @@
             </thead>
             <?php foreach ($zamowienia as $record): ?>
             <tbody>
-            <tr>
+            <tr id="order_<?php echo $record['order_id'] ?>">
                 <td><?php echo $record['order_id'] ?></td>
                 <td class="important">
                     <fieldset>
@@ -35,7 +35,7 @@
                                         name="order_update<?php echo $record['order_id'] ?>"
                                         class="form-control order_update"
                                         data-order_id="<?php echo $record['order_id'] ?>">
-                                    <option value=" 1">Zamówienie zostało złożone</option>
+                                    <option value="1">Zamówienie zostało złożone</option>
                                     <option value="2">Oczekuje na płatność</option>
                                     <option value="3">Zapłacone</option>
                                     <option value="4">Wysłane</option>
@@ -64,9 +64,12 @@
         </table>
         <script>
             $(".order_update").change(function () {
+                var order_id = $(this).data('order_id');
                 $.post('/change_status', {
-                    'order_id': $(this).data('order_id'),
+                    'order_id': order_id,
                     'status': $(this).val()
+                }, function () {
+                    $("#order_" + order_id).remove();
                 });
             });
         </script>

@@ -52,7 +52,7 @@
                 <td><?php echo $record['miasto'] ?></td>
                 <td><?php echo $record['numer_telefonu'] ?></td>
                 <td><?php echo $record['wartosc_zamowienia'] ?></td>
-                <td><a href="/order_details?orderid=<?php echo $record['order_id'] ?>">Zobacz szczegóły
+                <td><a href="/invoice_generator?orderid=<?php echo $record['order_id'] ?>">Zobacz szczegóły
                         zamówienia</a>
                 </td>
 

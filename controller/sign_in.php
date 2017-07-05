@@ -23,7 +23,7 @@ if ($admin) {
     redirect('/panel', 303);
 }
 
-$_SESSION['flashMessage'] = "Nie możesz się zalogować ziomuś";
+$_SESSION['flashMessage'] = "Nieprawidłowy login lub hasło.";
 
 redirect($_SERVER['HTTP_REFERER'], 403);
 
