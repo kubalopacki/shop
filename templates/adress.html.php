@@ -1,7 +1,11 @@
 <?php $title = "Podsumowanie" ?>
 <?php include 'top_menu.html.php' ?>
-
     <div class="container">
+        <?php if (!isset($_SESSION['user']['customer_id'])): ?>
+            <div class="alert alert-info text-center" role="alert" >Składasz swoje zamówienie jako gość, jeżeli założysz konto nie
+                będziesz musiał za każdym razem wpisywać swoich danych oraz uzyskasz podgląd do histori zakupów.
+            </div>
+        <?php endif; ?>
         <form class="form-horizontal" method="post" action="/finish_order" action="/address_update">
             <fieldset>
 
@@ -107,9 +111,9 @@
 
                 <div class="container">
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="button1id"></label>
+                        <label class="col-md-4  control-label" for="button1id"></label>
                         <div class="col-md-8">
-                            <button id="button1id" value="1" type="submit" name="status" class="btn btn-success">Kupuję
+                            <button  id="button1id" value="1" type="submit" name="status" class="btn btn-success">Kupuję
                             </button>
                         </div>
                     </div>

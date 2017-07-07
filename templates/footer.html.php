@@ -1,5 +1,5 @@
 <div class="container">
     <footer>
-        <p>&copy; 2016 RideLite, Inc.</p>
+        <p>&copy; 2017 RideLite, Inc.</p>
     </footer>
 </div>

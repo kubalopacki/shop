@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['cart'])) {
+if (isset($_SESSION['cart']) and count($_SESSION['cart']) > 0) {
 
     $fields = array_keys($_SESSION['cart']); //przypisuje zmiennej fields klucze z $data w postaci tablicy
     $where_part = implode(', ', $fields);
@@ -11,7 +11,6 @@ if (isset($_SESSION['cart'])) {
         IN($where_part)
         ORDER BY name_ DESC ";
 
-    echo $sql;
 
     $stmt = $pdo->query($sql);
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);

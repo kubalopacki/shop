@@ -1,6 +1,10 @@
 <?php
 
-$_SESSION['shipment_method'] = $_POST['selectbasic'];
+if (!isset($_SESSION['cart'])){
+    redirect('/', 303);
+}
+
+$_SESSION['shipment_method'] = $_POST['wysylka'];
 
 if (isset($_SESSION['user']['customer_id'])) {
     $customer_id = $_SESSION['user']['customer_id'];
