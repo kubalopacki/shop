@@ -1,6 +1,6 @@
 <?php $title = "Koszyk" ?>
 <?php include 'top_menu.html.php' ?>
-
+<?php $echo = false; ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12">
@@ -38,8 +38,15 @@
                                             by <?php echo $tablica[$id]['full_name'] ?><br>
                                         </h5>
                                         <span>Stan: </span>
-                                        <span class="text-success">
-                                            <strong>W magazynie</strong>
+
+                                        <?php if ($tablica[$id]['stock'] == 0): ?>
+                                        <?php $echo = true; ?>
+                                        <span class="text-success" style="color:#CC3300">
+                                                <strong>Produkt dostępny na zamówienie.*</strong>
+                                            <?php else: ?>
+                                            <span class="text-success">
+                                                <strong>W magazynie.</strong>
+                                                <?php endif; ?>
                                         </span>
                                     </div>
                                 </div>
@@ -75,7 +82,14 @@
 
                     <?php endforeach; ?>
                     <tr>
-                        <td>  </td>
+                        <td>
+                            <?php if ($echo): ?>
+                                <span style="font-size: 11px">*Nie wszystkie zamówione przez Ciebie produkty są w naszym
+                                magazynie.<br>
+                            Czas realizacji może
+                            się wydłużyć.</span>
+                            <?php endif; ?>
+                        </td>
                         <td>  </td>
                         <td>  </td>
                         <td>
@@ -119,8 +133,8 @@
         $.post('/remove_product_from_cart', {
             'product_id': product_id
         }, function (data) {
-            if(data.cart_value =0){
-                
+            if (data.cart_value = 0) {
+
             }
             if (data.quantity > 0) {
                 $('#ilosc_produktu_' + product_id).html(data.quantity);

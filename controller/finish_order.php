@@ -35,14 +35,16 @@ if (isset($_SESSION['cart'])) {
     foreach ($products as $product) {
         $product_id = intval($product['product_id']);
         $product['quantity'] = $_SESSION['cart'][$product_id];
+        unset($product['description']);
         $products_to_json[$product_id] = $product;
     }
 
 
-//print_r($products_to_json);
+    print_r($products_to_json);
 
     $szczegoly_zamowienia = json_encode($products_to_json);
 
+    echo $szczegoly_zamowienia;
 
     $szczegoly_zamowienia_table = [];
 
